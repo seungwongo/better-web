@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(document.cookie);
+      // name1=value1; name2=value2; name3=value3;...
+
+      // 쿠키 저장
+      function setCookie(key, value, expireDate) {
+        document.cookie =
+          key +
+          "=" +
+          escape(value) +
+          "; path=/; expires=" +
+          expireDate.toGMTString() +
+          ";";
+      }
+    </script>
+  </body>
+</html>

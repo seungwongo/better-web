@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str = new String("A");
+      console.log(str);
+
+      let num = new Number(10);
+      console.log(num);
+
+      let bool = new Boolean(true);
+      console.log(bool);
+
+      let arr = ["A", "B", "C"];
+      console.log(arr);
+
+      let obj = {
+        name: "John",
+        age: 30,
+      };
+
+      console.log(obj);
+
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      // person1 인스턴스 생성
+      const person1 = new Person("John Doe", 20);
+      console.log(person1);
+
+      person1.valueOf();
+    </script>
+  </body>
+</html>

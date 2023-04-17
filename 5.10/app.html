@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="/about">About</a>
+    <button onclick="login()">로그인</button>
+    <button onclick="share()">Share</button>
+    <script>
+      function share() {
+        try {
+          android.shareAction("https://feedon.kr");
+        } catch (error) {
+          alert(error);
+        }
+
+        try {
+          webkit.messageHandlers.shareAction.postMessage("https://feedon.kr");
+        } catch (error) {
+          alert(error);
+        }
+      }
+
+      function login() {
+        try {
+          android.loginAction("ZYkPrjQzg%2B95Q9RuDruaEA%3D%3D");
+        } catch (error) {
+          alert(error);
+        }
+
+        // alert(navigator.userAgent);
+
+        // try {
+        //   webkit.messageHandlers.loginAction.postMessage("12324344");
+        // } catch (error) {
+        //   alert(error);
+        // }
+      }
+
+      function test() {
+        alert("test");
+      }
+
+      // window.addEventListener("popstate", function (e) {
+      //   alert("popstate");
+      // });
+    </script>
+  </body>
+</html>

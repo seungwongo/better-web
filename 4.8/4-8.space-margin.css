@@ -1,0 +1,39 @@
+/* bottom에 대한 margin */
+.mb-xxs {
+  margin-bottom: 2px;
+}
+.mb-xs {
+  margin-bottom: 4px;
+}
+.mb-s {
+  margin-bottom: 8px;
+}
+.mb-m {
+  margin-bottom: 16px;
+}
+.mb-l {
+  margin-bottom: 2px;
+}
+.mb-xl {
+  margin-bottom: 64px;
+}
+
+/* right에 대한 margin */
+.mr-xxs {
+  margin-right: 2px;
+}
+.mr-xs {
+  margin-right: 4px;
+}
+.mr-s {
+  margin-right: 8px;
+}
+.mr-m {
+  margin-right: 16px;
+}
+.mr-l {
+  margin-right: 32px;
+}
+.mr-xl {
+  margin-right: 64px;
+}

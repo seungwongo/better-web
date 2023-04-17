@@ -1,0 +1,41 @@
+/* top, right, bottom, left 동일 너비 */
+.p-xs {
+  padding: 4px;
+}
+.p-s {
+  padding: 8px;
+}
+.p-m {
+  padding: 16px;
+}
+.p-l {
+  padding: 32px;
+}
+.p-xl {
+  padding: 64px;
+}
+.p-xl {
+  padding: 64px;
+}
+
+/* top과 bottom이 좁고 left와 right를 넓게 */
+.p-xs-s {
+  padding: 4px 8px;
+}
+.p-s-m {
+  padding: 8px 16px;
+}
+.p-m-l {
+  padding: 16px 32px;
+}
+
+/* top과 bottom이 넓고 left와 right를 좁게 */
+.p-s-xs {
+  padding: 8px 4px;
+}
+.p-m-s {
+  padding: 16px 8px;
+}
+.p-l-m {
+  padding: 32px 16px;
+}

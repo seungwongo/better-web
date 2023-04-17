@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- link bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- bootstrap modal example -->
+    <div class="container">
+      <h2>Modal Example</h2>
+      <!-- Button to Open the Modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#myModal"
+      >
+        Open modal
+      </button>
+
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">Modal body..</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1>about</h1>
+    <button>cllick</button>
+    <script>
+      //   window.onpopstate = function (event) {
+      //     event.preventDefault();
+      //     alert("popstate");
+      //   };
+      //   history.pushState(null, null, location.href);
+      //   window.onpopstate = function (event) {
+      //     history.go(1);
+      //   };
+
+      //   catch event open modal
+      window.addEventListener("load", () => {
+        $("#myModal").on("shown.bs.modal", function () {
+          history.pushState(null, null, location.href);
+          window.onpopstate = function (event) {
+            history.go(0);
+            $("#myModal").modal("hide");
+            //   alert("Back button was clicked!");
+            window.onpopstate = null;
+            // history.
+          };
+
+          //   window.addEventListener("popstate", function (event) {
+          //     event.preventDefault();
+          //     history.pushState(null, null, window.location.href);
+          //   });
+        });
+      });
+
+      //   history.pushState(null, null, location.href);
+      //   window.onpopstate = function (event) {
+      //     history.go(1);
+      //     $("#myModal").modal("hide");
+      //     alert("Back button was clicked!");
+      //   };
+
+      //   window.onpagehide = function (event) {
+      //     if (event.persisted) {
+      //       history.go(1);
+      //       //   close modal
+      //       $("#myModal").modal("hide");
+      //       alert("Back button was clicked!");
+      //     }
+      //   };
+
+      //   window.addEventListener("popstate", function () {
+      //     event.preventDefault();
+      //     alert("Back button was clicked!");
+      //   });
+
+      //   window.addEventListener("popstate", function (event) {
+      //     if (history.length > 1) {
+      //       alert("Back button was clicked!");
+      //     }
+      //   });
+
+      window.addEventListener("load", () => {
+        document.querySelectorAll(".thumb").forEach((item) => {
+          item.addEventListener("click", () => {
+            android.openModal();
+          });
+        });
+      });
+    </script>
+    <!-- link bootstrap script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

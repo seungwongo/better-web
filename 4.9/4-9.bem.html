@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Block */
+      .product {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid black;
+      }
+
+      /* Block__Element */
+      .product__image {
+        width: 100%;
+      }
+
+      /* Block__Element */
+      .product__info {
+        margin-top: 20px;
+      }
+
+      /* Block__Element */
+      .product__title {
+        margin: 0;
+      }
+
+      /* Block__Element */
+      .product__description {
+        margin: 0;
+      }
+
+      /* Block__Element */
+      .product__price {
+        margin: 0;
+      }
+
+      /* Block__Element */
+      .product__button {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: aquamarine;
+        border: none;
+      }
+
+      /* Block__Element--Modifier */
+      .product__button--disabled {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product">
+      <div class="product__image">
+        <img src="https://picsum.photos/300/200" alt="product image" />
+      </div>
+      <div class="product__info">
+        <h3 class="product__title">Product Title</h3>
+        <p class="product__description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        <button class="product__button">Add to cart</button>
+      </div>
+    </div>
+    <div class="product">
+      <div class="product__image">
+        <img src="https://picsum.photos/300/200" alt="product image" />
+      </div>
+      <div class="product__info">
+        <h3 class="product__title">Product Title</h3>
+        <p class="product__description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        <button class="product__button product__button--disabled">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .example .row {
+        margin-bottom: 10px;
+      }
+
+      .example .row div {
+        background-color: violet;
+        border: 1px solid black;
+        text-align: center;
+      }
+
+      /* 열에 해당하는 요소를 담는 행의 역할 담당 */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      /* 행 안의 열의 너비를 모두 동일한 너비 지정 */
+      .col {
+        flex: 1 0 0%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 1/12로 지정 */
+      .col-1 {
+        flex: 0 0 auto;
+        width: 8.333333%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 2/12로 지정 */
+      .col-2 {
+        flex: 0 0 auto;
+        width: 16.666667%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 3/12로 지정 */
+      .col-3 {
+        flex: 0 0 auto;
+        width: 25%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 4/12로 지정 */
+      .col-4 {
+        flex: 0 0 auto;
+        width: 33.333333%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 5/12로 지정 */
+      .col-5 {
+        flex: 0 0 auto;
+        width: 41.666667%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 6/12로 지정 */
+      .col-6 {
+        flex: 0 0 auto;
+        width: 50%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 7/12로 지정 */
+      .col-7 {
+        flex: 0 0 auto;
+        width: 58.333333%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 8/12로 지정 */
+      .col-8 {
+        flex: 0 0 auto;
+        width: 66.666667%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 9/12로 지정 */
+      .col-9 {
+        flex: 0 0 auto;
+        width: 75%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 10/12로 지정 */
+      .col-10 {
+        flex: 0 0 auto;
+        width: 83.333333%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 11/12로 지정 */
+      .col-11 {
+        flex: 0 0 auto;
+        width: 91.666667%;
+      }
+
+      /* 행 안의 열의 너비를 전체 너비의 12/12로 지정 */
+      .col-12 {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="example">
+      <div class="row">
+        <div class="col">1 of 2</div>
+        <div class="col">2 of 2</div>
+      </div>
+      <div class="row">
+        <div class="col">1 of 3</div>
+        <div class="col">2 of 3</div>
+        <div class="col">3 of 3</div>
+      </div>
+      <div class="row">
+        <div class="col-2">2 of 12</div>
+        <div class="col-10">10 of 12</div>
+      </div>
+      <div class="row">
+        <div class="col-4">6 of 12</div>
+        <div class="col-8">8 of 12</div>
+      </div>
+      <div class="row">
+        <div class="col-6">6 of 12</div>
+        <div class="col-6">6 of 12</div>
+      </div>
+    </div>
+  </body>
+</html>

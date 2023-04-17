@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button onclick="startSpeechRecognition();">음성인식</button>
+      <p class="output"></p>
+    </div>
+    <script>
+      let recognition = null;
+      const words = [
+        "음악",
+        "영화",
+        "검색",
+        "지도",
+        "날씨",
+        "뉴스",
+        "전화",
+        "이메일",
+        "종료",
+        "멈춰",
+        "시작",
+        "다음",
+        "이전",
+      ]; // 음성으로 인식할 수 있는 단어 목록
+
+      function checkCompatibility() {
+        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition; // SpeechRecognition 객체
+        var SpeechGrammarList =
+          SpeechGrammarList || window.webkitSpeechGrammarList; // SpeechGrammarList 객체
+
+        recognition = new SpeechRecognition(); // 음성 인식 객체 생성
+
+        if (!recognition) {
+          alert("Web Speech API를 지원하지 않는 브라우저입니다.");
+        }
+
+        if (SpeechGrammarList) {
+          const speechRecognitionList = new SpeechGrammarList(); // 음성으로 인식할 수 있는 단어 목록 객체 생성
+          const grammar =
+            "#JSGF V1.0; grammar colors; public <color> = " +
+            words.join(" | ") +
+            " ;";
+          speechRecognitionList.addFromString(grammar, 1); // 음성으로 인식할 수 있는 단어 목록 추가
+          recognition.grammars = speechRecognitionList; // 음성으로 인식할 수 있는 단어 목록
+        }
+        recognition.continuous = false; // 음성 인식을 계속할지 여부
+        recognition.lang = "ko-KR"; // 언어 설정
+        recognition.interimResults = false; // 음성 인식 결과를 중간에 보여줄지 여부
+        recognition.maxAlternatives = 1; // 음성 인식 결과 후보 개수
+      }
+
+      function startSpeechRecognition() {
+        recognition.onspeechend = function (event) {
+          recognition.stop(); // 음성 인식 종료
+        };
+
+        recognition.onerror = function (event) {
+          document.querySelector(".output").textContent =
+            "에러: " + event.error; // 에러 메시지
+        };
+
+        recognition.onnomatch = function (event) {
+          document.querySelector(".output").textContent =
+            "인식할 수 있는 명령이 아닙니다."; // 인식할 수 없는 명령
+        };
+
+        recognition.onresult = function (event) {
+          var word = event.results[0][0].transcript; // 음성 인식 결과
+          document.querySelector(".output").textContent =
+            "음성 실행 명령: " + word;
+        };
+
+        recognition.start(); //음성 인식 시작
+      }
+
+      window.addEventListener("load", checkCompatibility);
+    </script>
+  </body>
+</html>

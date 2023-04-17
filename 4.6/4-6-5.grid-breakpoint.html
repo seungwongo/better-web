@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 스마트폰 같은 작은 기기 (576px 이상) */
+      @media (min-width: 576px) {
+        .col-sm-1 {
+          flex: 0 0 auto;
+          width: 8.333333%;
+        }
+        .col-sm-2 {
+          flex: 0 0 auto;
+          width: 16.666667%;
+        }
+        .col-sm-3 {
+          flex: 0 0 auto;
+          width: 25%;
+        }
+        .col-sm-4 {
+          flex: 0 0 auto;
+          width: 33.333333%;
+        }
+        .col-sm-5 {
+          flex: 0 0 auto;
+          width: 41.666667%;
+        }
+        .col-sm-6 {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+        .col-sm-7 {
+          flex: 0 0 auto;
+          width: 58.333333%;
+        }
+        .col-sm-8 {
+          flex: 0 0 auto;
+          width: 66.666667%;
+        }
+        .col-sm-9 {
+          flex: 0 0 auto;
+          width: 75%;
+        }
+        .col-sm-10 {
+          flex: 0 0 auto;
+          width: 83.333333%;
+        }
+        .col-sm-11 {
+          flex: 0 0 auto;
+          width: 91.666667%;
+        }
+        .col-sm-12 {
+          flex: 0 0 auto;
+          width: 100%;
+        }
+      }
+
+      /* 태블릿 같은 중간 크기 기기 (768px 이상) */
+      @media (min-width: 768px) {
+        .col-md-1 {
+          flex: 0 0 auto;
+          width: 8.333333%;
+        }
+        .col-md-2 {
+          flex: 0 0 auto;
+          width: 16.666667%;
+        }
+        .col-md-3 {
+          flex: 0 0 auto;
+          width: 25%;
+        }
+        .col-md-4 {
+          flex: 0 0 auto;
+          width: 33.333333%;
+        }
+        .col-md-5 {
+          flex: 0 0 auto;
+          width: 41.666667%;
+        }
+        .col-md-6 {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+        .col-md-7 {
+          flex: 0 0 auto;
+          width: 58.333333%;
+        }
+        .col-md-8 {
+          flex: 0 0 auto;
+          width: 66.666667%;
+        }
+        .col-md-9 {
+          flex: 0 0 auto;
+          width: 75%;
+        }
+        .col-md-10 {
+          flex: 0 0 auto;
+          width: 83.333333%;
+        }
+        .col-md-11 {
+          flex: 0 0 auto;
+          width: 91.666667%;
+        }
+        .col-md-12 {
+          flex: 0 0 auto;
+          width: 100%;
+        }
+      }
+
+      /* 데스크톱 작은 해상도 (992px 이상) */
+      @media (min-width: 992px) {
+        .col-lg-1 {
+          flex: 0 0 auto;
+          width: 8.333333%;
+        }
+        .col-lg-2 {
+          flex: 0 0 auto;
+          width: 16.666667%;
+        }
+        .col-lg-3 {
+          flex: 0 0 auto;
+          width: 25%;
+        }
+        .col-lg-4 {
+          flex: 0 0 auto;
+          width: 33.333333%;
+        }
+        .col-lg-5 {
+          flex: 0 0 auto;
+          width: 41.666667%;
+        }
+        .col-lg-6 {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+        .col-lg-7 {
+          flex: 0 0 auto;
+          width: 58.333333%;
+        }
+        .col-lg-8 {
+          flex: 0 0 auto;
+          width: 66.666667%;
+        }
+        .col-lg-9 {
+          flex: 0 0 auto;
+          width: 75%;
+        }
+        .col-lg-10 {
+          flex: 0 0 auto;
+          width: 83.333333%;
+        }
+        .col-lg-11 {
+          flex: 0 0 auto;
+          width: 91.666667%;
+        }
+        .col-lg-12 {
+          flex: 0 0 auto;
+          width: 100%;
+        }
+      }
+
+      /* 데스크톱 중간 해상도 (1200px 이상) */
+      @media (min-width: 1200px) {
+        .col-xl-1 {
+          flex: 0 0 auto;
+          width: 8.333333%;
+        }
+        .col-xl-2 {
+          flex: 0 0 auto;
+          width: 16.666667%;
+        }
+        .col-xl-3 {
+          flex: 0 0 auto;
+          width: 25%;
+        }
+        .col-xl-4 {
+          flex: 0 0 auto;
+          width: 33.333333%;
+        }
+        .col-xl-5 {
+          flex: 0 0 auto;
+          width: 41.666667%;
+        }
+        .col-xl-6 {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+        .col-xl-7 {
+          flex: 0 0 auto;
+          width: 58.333333%;
+        }
+        .col-xl-8 {
+          flex: 0 0 auto;
+          width: 66.666667%;
+        }
+        .col-xl-9 {
+          flex: 0 0 auto;
+          width: 75%;
+        }
+        .col-xl-10 {
+          flex: 0 0 auto;
+          width: 83.333333%;
+        }
+        .col-xl-11 {
+          flex: 0 0 auto;
+          width: 91.666667%;
+        }
+        .col-xl-12 {
+          flex: 0 0 auto;
+          width: 100%;
+        }
+      }
+
+      /* 데스크톱 고 해상도 (1400px 이상) */
+      @media (min-width: 1400px) {
+        .col-xxl-1 {
+          flex: 0 0 auto;
+          width: 8.333333%;
+        }
+        .col-xxl-2 {
+          flex: 0 0 auto;
+          width: 16.666667%;
+        }
+        .col-xxl-3 {
+          flex: 0 0 auto;
+          width: 25%;
+        }
+        .col-xxl-4 {
+          flex: 0 0 auto;
+          width: 33.333333%;
+        }
+        .col-xxl-5 {
+          flex: 0 0 auto;
+          width: 41.666667%;
+        }
+        .col-xxl-6 {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+        .col-xxl-7 {
+          flex: 0 0 auto;
+          width: 58.333333%;
+        }
+        .col-xxl-8 {
+          flex: 0 0 auto;
+          width: 66.666667%;
+        }
+        .col-xxl-9 {
+          flex: 0 0 auto;
+          width: 75%;
+        }
+        .col-xxl-10 {
+          flex: 0 0 auto;
+          width: 83.333333%;
+        }
+        .col-xxl-11 {
+          flex: 0 0 auto;
+          width: 91.666667%;
+        }
+        .col-xxl-12 {
+          flex: 0 0 auto;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <!-- 브레이크 포인트 sm일 때 전체 너비(12), md일 때 너비 6만큼 차지 -->
+      <div class="col-sm-12 col-md-6">col-sm-12 col-md-6</div>
+      <div class="col-sm-12 col-md-6">col-sm-12 col-md-6</div>
+    </div>
+    <div class="row">
+      <!-- 브레이크 포인트 sm일 때 전체 너비(12), md일 때 너비 6, lg일 때 너비 4, xl일 때 너비 3만큼 차지 -->
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        col-sm-12 col-md-6 col-lg-4 col-xl-3
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        col-sm-12 col-md-6 col-lg-4 col-xl-3
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        col-sm-12 col-md-6 col-lg-4 col-xl-3
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        col-sm-12 col-md-6 col-lg-4 col-xl-3
+      </div>
+    </div>
+  </body>
+</html>

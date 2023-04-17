@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* pretty design */
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #333;
+      }
+      div {
+        margin-bottom: 1rem;
+      }
+      label {
+        display: inline-block;
+        width: 100px;
+      }
+      input {
+        width: 200px;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+        background-color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #eee;
+      }
+      p {
+        display: inline-block;
+        width: 200px;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="name">이름</label>
+      <!-- <p id="name" v-text="name"></p> -->
+      <input type="text" id="name" v-model="name" />
+    </div>
+    <div>
+      <label for="age">나이</label>
+      <!-- <p id="age" v-text="age"></p> -->
+      <input type="text" id="age" v-model="age" />
+    </div>
+    <div>
+      <label for="address">주소</label>
+      <!-- <p id="address" v-text="address"></p> -->
+      <select id="address" v-model="address">
+        <option value="Seoul">서울</option>
+        <option value="Busan">부산</option>
+        <option value="Jeju">제주</option>
+      </select>
+      <!-- <input type="text" id="address" v-model="address" /> -->
+    </div>
+    <button onclick="javascript:state.address='Jeju'">변경</button>
+    <button onclick="javascript:console.log(state)">읽기</button>
+
+    <script>
+      // 객체를 Proxy 객체로 반환
+      const reactive = (data) => {
+        return new Proxy(data, {
+          set(target, key, value) {
+            target[key] = value;
+            // 객체 값을 변경하면 화면에 반영되도록 render 함수를 호출
+            render(key, value);
+            return true;
+          },
+        });
+      };
+
+      // 화면에 데이터를 반영하는 함수
+      const render = (key, value) => {
+        // HTML 요소 중 v-text 속성 값이 key와 일치하는 요소를 찾아서 textContent로 데이터를 반영
+        let elements = document.querySelectorAll(`[v-text=${key}]`);
+        elements.forEach((element) => {
+          element.textContent = value;
+        });
+
+        // HTML 요소 중 v-html 속성 값이 key와 일치하는 요소를 찾아서 innerHTML로 데이터를 반영
+        elements = document.querySelectorAll(`[v-html=${key}]`);
+        elements.forEach((element) => {
+          element.innerHTML = value;
+        });
+
+        // HTML 요소 중 v-model 속성 값이 key와 일치하는 요소를 찾아서 value 속성에 데이터를 반영
+        elements = document.querySelectorAll(`[v-model=${key}]`);
+        elements.forEach((element) => {
+          element.value = value;
+        });
+      };
+
+      const customer = {
+        name: "John",
+        age: 30,
+        address: "Seoul",
+      };
+
+      // customer 객체를 Proxy 객체로 만듬
+      const state = reactive(customer);
+
+      function changeAddress() {
+        state.address = "Jeju";
+      }
+
+      // state, 즉 customer의 모든 키와 값을 render() 함수에 전달해서 키와 일치하는 DOM 객체를 찾아서 데이터 반영
+      function renderState() {
+        for (let key in state) {
+          render(key, state[key]);
+        }
+      }
+
+      const bindingEvent = () => {
+        document.addEventListener("input", (e) => {
+          if (
+            e.target.hasAttribute("v-model") &&
+            e.target.tagName === "INPUT"
+          ) {
+            const key = e.target.getAttribute("v-model");
+            state[key] = e.target.value;
+          }
+        });
+
+        document.addEventListener("change", (e) => {
+          if (
+            e.target.hasAttribute("v-model") &&
+            e.target.tagName === "SELECT"
+          ) {
+            const key = e.target.getAttribute("v-model");
+            state[key] = e.target.options[e.target.selectedIndex].value;
+          }
+        });
+      };
+
+      window.addEventListener("load", () => {
+        renderState(); // 초기 데이터를 화면에 반영
+        bindingEvent(); // 이벤트 바인딩
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function validate() {
+        // id 속성 값이 "email"인 HTML 요소를 가져옵니다.
+        // 여기서는 이메일을 입력받은 <input type="email" id="email">을 가져옵니다.
+        const emailElement = document.getElementById("email");
+
+        // 사용자로부터 입력받은 값을 가져옵니다.
+        const emailValue = emailElement.value;
+
+        // emailValid 자바스크립트 함수를 호출해서, 이메일 형식을 체크합니다.
+        const valid = emailValid(emailValue);
+
+        // <input type="email" id="email"> 태그에 새로운 속성인 aria-invalid 값으로 true/false를 설정합니다.
+        emailElement.setAttribute("aria-invalid", !valid);
+
+        if (!valid) {
+          // 입력된 형식이 올바르지 않다면
+          emailElement.style.border = "2px dotted red;"; // border를 빨간색으로 변경합니다.
+        }
+      }
+
+      function emailValid(emailValue) {
+        // 올바른 이메일 형식으로 입력되었는지 확인합니다.
+        // 올바른 형식으로 입력되었으면 true 값을, 올바르지 않다면 false 값을 반환합니다.
+      }
+    </script>
+  </body>
+</html>
