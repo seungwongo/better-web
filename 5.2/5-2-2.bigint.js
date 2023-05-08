@@ -7,7 +7,7 @@ const bigint3 = BigInt("9007199254740991");
 // 9007199254740991n
 
 const maxSafeInteger = BigInt(Number.MAX_SAFE_INTEGER);
-// 9007199254740991
+// 9007199254740991n
 
 const maxPlusOne = maxSafeInteger + 1n;
 // 9007199254740992n
