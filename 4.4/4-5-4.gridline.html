@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        grid-gap: 20px;
+      }
+      .header {
+        grid-column: 1 / 4; /* column 1번에서 4번까지 */
+        grid-row: 1;
+        background-color: greenyellow;
+      }
+      .aside {
+        grid-column: 1 / 2; /* column 1번에서 2번까지 */
+        grid-row: 2;
+        background-color: yellow;
+      }
+      .article {
+        grid-column: 2 / 4; /* column 2번에서 4번까지 */
+        grid-row: 2;
+        background-color: gray;
+      }
+      .footer {
+        grid-column: 1 / 4; /* column 1번에서 4번까지 */
+        grid-row: 3;
+        background-color: bisque;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>페이지 header 영역입니다.</h1>
+      </div>
+      <div class="aside">
+        <h3>aside 영역</h3>
+        <p>...</p>
+      </div>
+      <div class="article">
+        <h3>article 영역</h3>
+        <p>...</p>
+        +더 나은 웹 개발을 위한 안내서.indd 171 2023-05-04 오후 1:42:59 172 더
+        나은 웹 개발을 위한 안내서
+      </div>
+      <div class="footer">페이지 footer 영역 입니다.</div>
+    </div>
+  </body>
+</html>
